@@ -32,9 +32,9 @@ function Navbar() {
 
 function HeroSliderSection() {
   return (
-    <section>
-      <img src={imageHeroDesktop1} alt="hero-image" />
-      <div>
+    <section className="hero-section">
+      <img className="hero-img" src={imageHeroDesktop1} alt="hero-img" />
+      <div className="hero-container">
         <h1>Discover innovative ways to decorate</h1>
         <p>
           We provide unmatched quality, comfort, and style for property owners
@@ -44,10 +44,10 @@ function HeroSliderSection() {
           love.
         </p>
         <Button className={"shop-now-btn"}>SHOP NOW</Button>
-      </div>
-      <div>
-        <Button className={"arrow-left-btn"}>left</Button>
-        <Button className={"arrow-right-btn"}>right</Button>
+        <div className="arrow-btns-container">
+          <Button className={"arrow-left-btn"}>left</Button>
+          <Button className={"arrow-right-btn"}>right</Button>
+        </div>
       </div>
     </section>
   );
@@ -59,9 +59,9 @@ function Button({ children, className, onClick }) {
 
 function AboutUsSection() {
   return (
-    <section>
-      <img src={imageAboutDark} alt="image-about-dark" />
-      <div>
+    <section className="about-us-section">
+      <img className="about-us-img" src={imageAboutDark} alt="about-dark" />
+      <div className="about-us-container">
         <h3>About our furniture</h3>
         <p>
           Our multifunctional collection blends design and function to suit your
@@ -72,7 +72,7 @@ function AboutUsSection() {
           dream space.
         </p>
       </div>
-      <img src={imageAboutLight} alt="image-about-light" />
+      <img className="about-us-img" src={imageAboutLight} alt="about-light" />
     </section>
   );
 }
