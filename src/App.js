@@ -2,34 +2,80 @@
 // Challenge by Frontend Mentor. Coded by Your Name Here.
 import React, { useState } from "react";
 import logoSvg from "./images/logo.svg";
+import hambrgerMenu from "./images/icon-hamburger.svg";
+import closeMenu from "./images/icon-close.svg";
 import imageAboutDark from "./images/image-about-dark.jpg";
 import imageAboutLight from "./images/image-about-light.jpg";
 import imageHeroDesktop1 from "./images/desktop-image-hero-1.jpg";
+import arrowLeft from "./images/icon-angle-left.svg";
+import arrowRight from "./images/icon-angle-right.svg";
+import shopArrow from "./images/icon-arrow.svg";
 
 function App() {
+  const [mobileView, setMobileView] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  function changeOpenStatus() {
+    setIsOpen(!isOpen);
+  }
+
+  function changeImgSrc() {
+    if (window.innerWidth >= 968) {
+      setMobileView(true);
+    } else {
+      setMobileView(false);
+    }
+  }
+
+  window.addEventListener("resize", changeImgSrc);
+
   return (
     <div className="App">
-      <Navbar />
+      <Navbar
+        mobileView={mobileView}
+        onChangeOpen={changeOpenStatus}
+        isOpen={isOpen}
+      />
       <HeroSliderSection />
       <AboutUsSection />
     </div>
   );
 }
-
-function Navbar() {
+// navbar
+function Navbar({ mobileView, isOpen, onChangeOpen }) {
   return (
     <nav className="navbar">
       <img src={logoSvg} alt="logo-svg" />
-      <ul className="nav-menu">
-        <li>home</li>
-        <li>shop</li>
-        <li>about</li>
-        <li>contact</li>
-      </ul>
+
+      {mobileView && (
+        <ul className="nav-menu">
+          <li>
+            <a>home</a>
+          </li>
+          <li>
+            <a>shop</a>
+          </li>
+          <li>
+            <a>about</a>
+          </li>
+          <li>
+            <a>contact</a>
+          </li>
+        </ul>
+      )}
+
+      {!mobileView && (
+        <Button onClick={onChangeOpen} className={"hamburger-menu-btn"}>
+          <img
+            src={!isOpen ? hambrgerMenu : closeMenu}
+            alt="hamburger-menu-icon"
+          />
+        </Button>
+      )}
     </nav>
   );
 }
-
+// Hero section
 function HeroSliderSection() {
   return (
     <section className="hero-section">
@@ -43,20 +89,23 @@ function HeroSliderSection() {
           collection and make your property a reflection of you and what you
           love.
         </p>
-        <Button className={"shop-now-btn"}>SHOP NOW</Button>
+        <Button className={"shop-now-btn"}>
+          SHOP NOW <img src={shopArrow} alt="shop arrow" />
+        </Button>
         <div className="arrow-btns-container">
-          <Button className={"arrow-left-btn"}>left</Button>
-          <Button className={"arrow-right-btn"}>right</Button>
+          <Button className={"arrow-left-btn"}>
+            <img src={arrowLeft} alt="arrow-left" />
+          </Button>
+          <Button className={"arrow-right-btn"}>
+            <img src={arrowRight} alt="arrow-right" />
+          </Button>
         </div>
       </div>
     </section>
   );
 }
 
-function Button({ children, className, onClick }) {
-  return <button className={className}>{children}</button>;
-}
-
+// about us section
 function AboutUsSection() {
   return (
     <section className="about-us-section">
@@ -74,6 +123,16 @@ function AboutUsSection() {
       </div>
       <img className="about-us-img" src={imageAboutLight} alt="about-light" />
     </section>
+  );
+}
+
+// help components
+// button
+function Button({ children, className, onClick }) {
+  return (
+    <button onClick={() => onClick()} className={className}>
+      {children}
+    </button>
   );
 }
 export default App;
