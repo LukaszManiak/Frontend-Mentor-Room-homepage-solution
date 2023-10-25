@@ -22,6 +22,7 @@ function App() {
   function changeImgSrc() {
     if (window.innerWidth >= 968) {
       setMobileView(true);
+      setIsOpen(false);
     } else {
       setMobileView(false);
     }
@@ -31,11 +32,13 @@ function App() {
 
   return (
     <div className="App">
+      <div className={isOpen ? "dark-bg" : "dark-bg hidden"}></div>
       <Navbar
         mobileView={mobileView}
         onChangeOpen={changeOpenStatus}
         isOpen={isOpen}
       />
+      <div className={isOpen ? "mobile-menu" : "mobile-menu hidden"}> </div>
       <HeroSliderSection />
       <AboutUsSection />
     </div>
