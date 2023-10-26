@@ -142,6 +142,13 @@ body {
   z-index: 20;
 }
 
+.mobile-nav-menu {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 @media (max-width: 968px) {
   /* navbar */
   .navbar {
