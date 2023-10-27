@@ -90,7 +90,7 @@ function App() {
 function Navbar({ mobileView, isOpen, onChangeOpen }) {
   return (
     <nav className="navbar">
-      <img src={logoSvg} alt="logo-svg" />
+      <img className={isOpen ? "hide" : ""} src={logoSvg} alt="logo-svg" />
 
       {mobileView && <NavMenu className={"nav-menu"} />}
 

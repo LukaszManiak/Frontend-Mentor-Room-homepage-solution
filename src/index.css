@@ -25,11 +25,12 @@ body {
   top: 0;
   left: 0;
   z-index: 10;
-  padding: 1rem 2rem;
+  padding: 1.2rem 2rem;
 
   width: 50%;
   display: flex;
   align-items: flex-start;
+  font-weight: bold;
 }
 
 .nav-menu {
@@ -75,7 +76,7 @@ body {
 
 /* hero section */
 .hero-section {
-  margin-top: -3rem;
+  margin-top: -4rem;
   display: flex;
   justify-content: space-between;
 }
@@ -106,15 +107,22 @@ body {
   left: 0;
   width: 50%;
   display: flex;
+  justify-content: center;
 }
 
 .arrow-left-btn,
 .arrow-right-btn {
-  width: 25%;
+  width: 50%;
   background-color: var(--black);
   padding: 2rem 4rem;
   border: none;
   cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+.arrow-left-btn:hover,
+.arrow-right-btn:hover {
+  background-color: var(--veryDarkGray);
 }
 
 /* about us section */
@@ -136,6 +144,7 @@ body {
 
 .hamburger-menu-btn {
   background-color: transparent;
+
   margin: 0px;
   border: none;
   cursor: pointer;
@@ -143,16 +152,23 @@ body {
 }
 
 .mobile-nav-menu {
-  width: 70%;
+  width: 50%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 90%;
+  padding-left: 40vw;
+  font-weight: bold;
+}
+
+.hide {
+  opacity: 0;
 }
 
 @media (max-width: 968px) {
   /* navbar */
   .navbar {
-    padding: 0.8em 1.6em;
+    margin: 1em 0em 0em 0em;
     width: 50%;
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -160,6 +176,7 @@ body {
 
   /* hero section */
   .hero-section {
+    margin-top: -5rem;
     width: 100%;
     flex-direction: column;
     align-items: center;
@@ -170,8 +187,8 @@ body {
   }
 
   .hero-container {
-    width: 60%;
-    padding: 2rem 4rem;
+    width: 90%;
+    padding: 2rem 0rem;
   }
 
   .arrow-btns-container {
@@ -179,6 +196,13 @@ body {
     right: 0;
     bottom: auto;
     left: auto;
+    width: 50%;
+  }
+
+  .arrow-left-btn,
+  .arrow-right-btn {
+    width: 50%;
+    padding: 1rem 2rem;
   }
 
   /* about us section */
