@@ -9,25 +9,33 @@ import imageAboutLight from "./images/image-about-light.jpg";
 import imageHeroDesktop0 from "./images/desktop-image-hero-1.jpg";
 import imageHeroDesktop1 from "./images/desktop-image-hero-2.jpg";
 import imageHeroDesktop2 from "./images/desktop-image-hero-3.jpg";
+
+import imageHeroMobile0 from "./images/mobile-image-hero-1.jpg";
+import imageHeroMobile1 from "./images/mobile-image-hero-2.jpg";
+import imageHeroMobile2 from "./images/mobile-image-hero-3.jpg";
+
 import arrowLeft from "./images/icon-angle-left.svg";
 import arrowRight from "./images/icon-angle-right.svg";
 import shopArrow from "./images/icon-arrow.svg";
 
 const heroSlides = [
   {
-    image: imageHeroDesktop0,
+    desktopImage: imageHeroDesktop0,
+    mobileImage: imageHeroMobile0,
     title: "Discover innovative ways to decorate",
     description:
       "We provide unmatched quality, comfort, and style for property owners across the country. Our experts combine form and function in bringing your vision to life. Create a room in your own style with our collection and make your property a reflection of you and what you love.",
   },
   {
-    image: imageHeroDesktop1,
+    desktopImage: imageHeroDesktop1,
+    mobileImage: imageHeroMobile1,
     title: "Discover innovative ways to decorate",
     description:
       "We are available all across the globe With stores all over the world, it's easy for you to find furniture for your home or place of business. Locally, we’re in most major cities throughout the country. Find the branch nearest you using our store locator. Any questions? Don't hesitate to contact us today.",
   },
   {
-    image: imageHeroDesktop2,
+    desktopImage: imageHeroDesktop2,
+    mobileImage: imageHeroMobile2,
     title: "Discover innovative ways to decorate",
     description:
       "Manufactured with the best materials Our modern furniture store provide a high level of quality. Our company has invested in advanced technology to ensure that every product is made as perfect and as consistent as possible. With three decades of experience in this industry, we understand what customers want for their home and office.",
@@ -78,6 +86,7 @@ function App() {
         <NavMenu className={"mobile-nav-menu"} />
       </div>
       <HeroSliderSection
+        mobileView={mobileView}
         curSlide={slide}
         onSetNext={nextSlide}
         onSetPrevious={previousSlide}
@@ -106,20 +115,20 @@ function Navbar({ mobileView, isOpen, onChangeOpen }) {
   );
 }
 // Hero section
-function HeroSliderSection({ curSlide, onSetNext, onSetPrevious }) {
+function HeroSliderSection({ mobileView, curSlide, onSetNext, onSetPrevious }) {
   return (
     <section className="hero-section">
-      <img
-        className="hero-img"
-        src={heroSlides[curSlide].image}
-        alt="hero-img"
-      />
-      <div className="hero-container">
-        <h1>{heroSlides[curSlide].title}</h1>
-        <p>{heroSlides[curSlide].description}</p>
-        <Button className={"shop-now-btn"}>
-          SHOP NOW <img src={shopArrow} alt="shop arrow" />
-        </Button>
+      <div className="hero-img-container">
+        <img
+          className="hero-img"
+          src={
+            mobileView
+              ? heroSlides[curSlide].desktopImage
+              : heroSlides[curSlide].mobileImage
+          }
+          alt="hero-img"
+        />
+
         <div className="arrow-btns-container">
           <Button onClick={() => onSetPrevious()} className={"arrow-left-btn"}>
             <img src={arrowLeft} alt="arrow-left" />
@@ -127,6 +136,16 @@ function HeroSliderSection({ curSlide, onSetNext, onSetPrevious }) {
           <Button onClick={() => onSetNext()} className={"arrow-right-btn"}>
             <img src={arrowRight} alt="arrow-right" />
           </Button>
+        </div>
+      </div>
+
+      <div className="hero-container">
+        <div className="hero-content">
+          <h1>{heroSlides[curSlide].title}</h1>
+          <p>{heroSlides[curSlide].description}</p>
+          <a className={"shop-now-btn"}>
+            SHOP NOW <img src={shopArrow} alt="shop arrow" />
+          </a>
         </div>
       </div>
     </section>
@@ -139,7 +158,7 @@ function AboutUsSection() {
     <section className="about-us-section">
       <img className="about-us-img" src={imageAboutDark} alt="about-dark" />
       <div className="about-us-container">
-        <h3>About our furniture</h3>
+        <h3>ABOUT OUR FURNITURE</h3>
         <p>
           Our multifunctional collection blends design and function to suit your
           individual taste. Make each room unique, or pick a cohesive theme that

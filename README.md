@@ -42,7 +42,8 @@ Users should be able to:
 
 ### Screenshots
 
-<!--
-![Screenshot 1](/screenshots/screen3.jpeg?raw=true "Screenshot 1 (desktop)")
-![Screenshot 2](/screenshots/screen1.jpeg?raw=true "Screenshot 2 (mobile)")
-![Screenshot 4](/screenshots/screen2.jpeg?raw=true "Screenshot 4") -->
+![Screenshot 1](/screenshots/screen1.jpeg?raw=true "Screenshot 1 (desktop)")
+![Screenshot 2](/screenshots/screen5.jpeg?raw=true "Screenshot 2 ")
+![Screenshot 3](/screenshots/screen2.jpeg?raw=true "Screenshot 3 (mobile)")
+![Screenshot 4](/screenshots/screen3.jpeg?raw=true "Screenshot 4")
+![Screenshot 5](/screenshots/screen4.jpeg?raw=true "Screenshot 5")

@@ -12,25 +12,36 @@ html,
   font-family: "League Spartan", sans-serif;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+}
+
+html {
+  font-size: 12px;
 }
 body {
   background-color: var(--white);
-  font-size: 12px;
+}
+
+p {
+  color: var(--darkGray);
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.6rem;
 }
 
 /* navbar */
 .navbar {
   position: sticky;
-  top: 0;
-  left: 0;
+  top: 60px;
+  left: 3vw;
   z-index: 10;
-  padding: 1.2rem 2rem;
+  padding: 1rem 2rem;
+
+  font-size: 1.1rem;
 
   width: 50%;
   display: flex;
   align-items: flex-start;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .nav-menu {
@@ -53,6 +64,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+
   z-index: 5;
   width: 100vw;
   height: 100vh;
@@ -71,27 +83,46 @@ body {
   z-index: 5;
   background-color: var(--white);
   width: 100%;
-  height: 10vh;
+  height: 82px;
+  padding: 1rem 2rem;
 }
 
 /* hero section */
 .hero-section {
-  margin-top: -4rem;
+  margin-top: -60px;
   display: flex;
   justify-content: space-between;
 }
 
-.hero-img {
+.hero-img-container {
+  position: relative;
   width: 60%;
 }
 
+.hero-img {
+  width: 100%;
+  height: 100%;
+}
+
 .hero-container {
-  position: relative;
   width: 40%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+
+.hero-content {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
   align-items: start;
+  gap: 20px;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  font-weight: 600;
 }
 
 .shop-now-btn {
@@ -99,13 +130,16 @@ body {
   background-color: transparent;
   color: var(--black);
   cursor: pointer;
+  font-weight: 500;
+  font-size: 1.6rem;
+  letter-spacing: 1rem;
 }
 
 .arrow-btns-container {
   position: absolute;
   bottom: 0;
-  left: 0;
-  width: 50%;
+  right: -16.6%;
+  width: 16.6%;
   display: flex;
   justify-content: center;
 }
@@ -114,7 +148,7 @@ body {
 .arrow-right-btn {
   width: 50%;
   background-color: var(--black);
-  padding: 2rem 4rem;
+  padding: 2rem 2rem;
   border: none;
   cursor: pointer;
   transition: all 0.15s ease-in-out;
@@ -132,10 +166,23 @@ body {
 }
 .about-us-container {
   width: 40%;
-  padding: 1.5em 2em;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  gap: 1rem;
+}
+.about-us-container p {
+  width: 80%;
+}
+
+.about-us-container h3 {
+  width: 80%;
+  font-size: 2rem;
+  letter-spacing: 0.5rem;
+  font-weight: 700;
 }
 
 .about-us-img {
@@ -158,51 +205,74 @@ body {
   align-items: center;
   height: 90%;
   padding-left: 40vw;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 1.2rem;
 }
 
 .hide {
   opacity: 0;
 }
 
-@media (max-width: 968px) {
-  /* navbar */
-  .navbar {
-    margin: 1em 0em 0em 0em;
-    width: 50%;
-    flex-direction: row-reverse;
-    justify-content: space-between;
+@media (max-width: 1468px) {
+  html,
+  * {
+    overflow-x: hidden;
+  }
+
+  html {
+    font-size: 16px;
+  }
+
+  p {
+    font-size: 1.3rem;
   }
 
   /* hero section */
   .hero-section {
-    margin-top: -5rem;
+    margin-top: -51px;
     width: 100%;
     flex-direction: column;
     align-items: center;
   }
 
-  .hero-img {
+  .hero-img-container {
+    position: relative;
     width: 100%;
   }
 
+  .hero-img {
+    width: 100%;
+    height: 100%;
+  }
+
   .hero-container {
-    width: 90%;
-    padding: 2rem 0rem;
+    width: 84%;
+    padding: 6rem 0rem;
+    align-items: start;
+  }
+
+  .hero-content {
+    width: 100%;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .shop-now-btn {
+    font-size: 1.2rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
   }
 
   .arrow-btns-container {
-    top: 0;
+    bottom: 3px;
     right: 0;
-    bottom: auto;
-    left: auto;
-    width: 50%;
-  }
-
-  .arrow-left-btn,
-  .arrow-right-btn {
-    width: 50%;
-    padding: 1rem 2rem;
+    width: 20%;
   }
 
   /* about us section */
@@ -213,11 +283,54 @@ body {
   }
 
   .about-us-container {
-    width: 80%;
-    padding: 2rem 6rem;
+    width: 84%;
+    padding: 0;
+    align-items: start;
+    padding: 6rem 6rem;
+  }
+
+  .about-us-container h3 {
+    width: 100%;
+    font-size: 1.5rem;
+    letter-spacing: 0.5rem;
+  }
+  .about-us-container p {
+    width: 100%;
   }
 
   .about-us-img {
     width: 100%;
+  }
+}
+
+@media (max-width: 968px) {
+  html {
+    font-size: 12px;
+  }
+
+  p {
+    font-size: 1.4rem;
+  }
+
+  /* navbar */
+  .navbar {
+    top: 30px;
+    left: 3vw;
+    z-index: 10;
+    padding: 1rem 2rem;
+
+    width: 50%;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  .arrow-btns-container {
+    width: 30%;
+  }
+
+  .arrow-left-btn,
+  .arrow-right-btn {
+    width: 50%;
+    padding: 2rem 2rem;
   }
 }
