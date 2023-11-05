@@ -20,7 +20,9 @@ html {
 body {
   background-color: var(--white);
 }
-
+a {
+  list-style: none;
+}
 p {
   color: var(--darkGray);
   font-weight: 500;
