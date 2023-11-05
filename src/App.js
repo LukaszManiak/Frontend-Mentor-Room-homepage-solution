@@ -186,10 +186,26 @@ function Button({ children, className, onClick }) {
 function NavMenu({ className }) {
   return (
     <ul className={className}>
-      <li>home</li>
-      <li>shop</li>
-      <li>about</li>
-      <li>contact</li>
+      <li>
+        <a href="/jakaś-strona" role="button">
+          home
+        </a>
+      </li>
+      <li>
+        <a href="/jakaś-strona" role="button">
+          shop{" "}
+        </a>
+      </li>
+      <li>
+        <a href="/jakaś-strona" role="button">
+          about
+        </a>
+      </li>
+      <li>
+        <a href="/jakaś-strona" role="button">
+          contact
+        </a>
+      </li>
     </ul>
   );
 }
