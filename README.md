@@ -25,8 +25,8 @@ Users should be able to:
 
 ### Links
 
-<!-- - Solution URL: [GitHub](https://github.com/LukaszManiak/Frontend-Mentor-easybank-landing-page-master)
-- Live Site URL: [Netlify](https://easy-bank-lukas.netlify.app/) -->
+- Solution URL: [GitHub](https://github.com/LukaszManiak/Frontend-Mentor-Room-homepage-solution)
+- Live Site URL: [Netlify](https://lukas-homepage.netlify.app/)
 
 ### Built with
 
