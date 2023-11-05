@@ -21,7 +21,8 @@ body {
   background-color: var(--white);
 }
 a {
-  list-style: none;
+  text-decoration: none;
+  color: var(--white);
 }
 p {
   color: var(--darkGray);
@@ -312,6 +313,9 @@ p {
 
   p {
     font-size: 1.4rem;
+  }
+  a {
+    color: var(--black);
   }
 
   /* navbar */
