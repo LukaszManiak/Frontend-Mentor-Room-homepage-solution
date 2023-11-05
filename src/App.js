@@ -143,7 +143,7 @@ function HeroSliderSection({ mobileView, curSlide, onSetNext, onSetPrevious }) {
         <div className="hero-content">
           <h1>{heroSlides[curSlide].title}</h1>
           <p>{heroSlides[curSlide].description}</p>
-          <a className={"shop-now-btn"}>
+          <a className={"shop-now-btn"} href="/jakaś-strona" role="button">
             SHOP NOW <img src={shopArrow} alt="shop arrow" />
           </a>
         </div>
@@ -186,18 +186,10 @@ function Button({ children, className, onClick }) {
 function NavMenu({ className }) {
   return (
     <ul className={className}>
-      <li>
-        <a>home</a>
-      </li>
-      <li>
-        <a>shop</a>
-      </li>
-      <li>
-        <a>about</a>
-      </li>
-      <li>
-        <a>contact</a>
-      </li>
+      <li>home</li>
+      <li>shop</li>
+      <li>about</li>
+      <li>contact</li>
     </ul>
   );
 }
