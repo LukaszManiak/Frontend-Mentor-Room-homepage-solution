@@ -21,6 +21,7 @@ body {
   background-color: var(--white);
 }
 a {
+  cursor: pointer;
   text-decoration: none;
   color: var(--white);
 }
