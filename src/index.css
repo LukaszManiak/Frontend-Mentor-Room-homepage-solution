@@ -40,7 +40,7 @@ p {
   z-index: 10;
   padding: 1rem 2rem;
 
-  font-size: 1.1rem;
+  font-size: 1.6rem;
 
   width: 50%;
   display: flex;
@@ -207,10 +207,27 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   height: 90%;
   padding-left: 40vw;
   font-weight: 600;
   font-size: 1.2rem;
+}
+
+.navbar-open {
+  position: sticky;
+
+  display: flex;
+  align-items: flex-start;
+
+  top: 30px;
+  left: 3vw;
+  z-index: 10;
+  padding: 1rem 2rem;
+
+  width: 30%;
+  flex-direction: row-reverse;
+  justify-content: space-between;
 }
 
 .hide {
