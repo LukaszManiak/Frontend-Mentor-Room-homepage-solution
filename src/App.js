@@ -143,7 +143,11 @@ function HeroSliderSection({ mobileView, curSlide, onSetNext, onSetPrevious }) {
         <div className="hero-content">
           <h1>{heroSlides[curSlide].title}</h1>
           <p>{heroSlides[curSlide].description}</p>
-          <a className={"shop-now-btn"} href="/jakaś-strona" role="button">
+          <a
+            className={"shop-now-btn"}
+            href="https://lukas-homepage.netlify.app/"
+            role="button"
+          >
             SHOP NOW <img src={shopArrow} alt="shop arrow" />
           </a>
         </div>
@@ -187,22 +191,22 @@ function NavMenu({ className }) {
   return (
     <ul className={className}>
       <li>
-        <a href="/jakaś-strona" role="button">
+        <a href="https://lukas-homepage.netlify.app/" role="button">
           home
         </a>
       </li>
       <li>
-        <a href="/jakaś-strona" role="button">
+        <a href="https://lukas-homepage.netlify.app/" role="button">
           shop{" "}
         </a>
       </li>
       <li>
-        <a href="/jakaś-strona" role="button">
+        <a href="https://lukas-homepage.netlify.app/" role="button">
           about
         </a>
       </li>
       <li>
-        <a href="/jakaś-strona" role="button">
+        <a href="https://lukas-homepage.netlify.app/" role="button">
           contact
         </a>
       </li>
